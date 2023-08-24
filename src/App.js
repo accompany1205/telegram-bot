@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <TLoginButton
-        botName="samplebot"
+        botName="pariztelegram_bot"
         buttonSize={TLoginButtonSize.Large}
         lang="en"
         usePic={false}
