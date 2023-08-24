@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { TLoginButton, TLoginButtonSize } from 'react-telegram-auth';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TLoginButton
+        botName="samplebot"
+        buttonSize={TLoginButtonSize.Large}
+        lang="en"
+        usePic={false}
+        cornerRadius={20}
+        onAuthCallback={(user) => {
+          console.log('Hello, user!', user);
+        }}
+        requestAccess={'write'}
+      />
     </div>
   );
 }
